@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Briefing</title>
+</head>
+<body>
+    <h1>Editar Briefing</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="briefing">Briefing:</label><br>
+        <textarea id="briefing" name="briefing" rows="10" cols="50">{{ briefing_text }}</textarea><br><br>
+        <button type="submit">Salvar Briefing</button>
+    </form>
+</body>
+</html>

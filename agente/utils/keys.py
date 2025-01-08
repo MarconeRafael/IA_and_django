@@ -1,0 +1,1 @@
+chave_openai = "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"

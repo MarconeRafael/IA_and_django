@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processamento de Campanha</title>
+</head>
+<body>
+    <h1>Detalhes da Campanha</h1>
+
+    {% if mensagem %}
+        <p style="color: green;">{{ mensagem }}</p>
+    {% endif %}
+    {% if erro %}
+        <p style="color: red;">{{ erro }}</p>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="nome_campanha">Nome da Campanha:</label><br>
+        <input type="text" id="nome_campanha" name="nome_campanha" placeholder="Campanha Black Friday" required><br><br>
+
+        <label for="objetivo">Objetivo:</label><br>
+        <input type="text" id="objetivo" name="objetivo" placeholder="Aumentar vendas ou Obter seguidores" required><br><br>
+
+        <label for="publico_alvo">Público-Alvo:</label><br>
+        <input type="text" id="publico_alvo" name="publico_alvo" placeholder="Jovens de 18-25 anos" required><br><br>
+
+        <label for="formato_conteudo">Formato do Conteúdo Desejado:</label><br>
+        <input type="text" id="formato_conteudo" name="formato_conteudo" placeholder="Reels, Stories, etc." required><br><br>
+
+        <label for="canal_divulgacao">Canal de Divulgação:</label><br>
+        <input type="text" id="canal_divulgacao" name="canal_divulgacao" placeholder="Instagram, TikTok" required><br><br>
+
+        <label for="nicho_mercado">Nicho de Mercado:</label><br>
+        <input type="text" id="nicho_mercado" name="nicho_mercado" placeholder="Tecnologia, Moda, etc." required><br><br>
+
+        <label for="acoes_esperadas">Ações e Comportamentos Esperados do Creator:</label><br>
+        <textarea id="acoes_esperadas" name="acoes_esperadas" placeholder="Interagir com seguidores, criar conteúdos engajadores" required></textarea><br><br>
+
+        <label for="comportamentos_indesejados">Comportamentos Indesejados ou Proibidos:</label><br>
+        <textarea id="comportamentos_indesejados" name="comportamentos_indesejados" placeholder="Falar mal da marca, utilizar linguagem ofensiva" required></textarea><br><br>
+
+        <label for="informacoes_adicionais">Informações Adicionais:</label><br>
+        <textarea id="informacoes_adicionais" name="informacoes_adicionais" placeholder="Outras informações relevantes"></textarea><br><br>
+
+        <button type="submit">Enviar Detalhes da Campanha</button>
+    </form>
+    
+</body>
+</html>
